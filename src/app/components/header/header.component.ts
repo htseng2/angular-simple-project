@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  title = 'angular-simple-project';
+  title = 'Task Reminder';
   showAddTask: boolean = false;
   subscription: Subscription;
 

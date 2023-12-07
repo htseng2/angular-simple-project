@@ -1,7 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Task } from '../Task';
-import { Observable } from 'rxjs';
+import { Observable, from, map } from 'rxjs';
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc,
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,19 +27,30 @@ export class TaskService {
   constructor(private http: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiURL);
+    const tasksRef = collection(db, 'tasks');
+    return from(getDocs(tasksRef)).pipe(
+      map((querySnapshot) =>
+        querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Task))
+      )
+    );
   }
 
-  deleteTask(task: Task): Observable<Task> {
-    const url = `${this.apiURL}/${task.id}`;
-    return this.http.delete<Task>(url);
+  deleteTask(task: Task): Observable<void> {
+    const docRef = doc(db, 'tasks', task.id!);
+    return from(deleteDoc(docRef));
   }
 
-  updateTaskReminder(task: Task): Observable<Task> {
-    const url = `${this.apiURL}/${task.id}`;
-    return this.http.put<Task>(url, task, httpOptions);
+  updateTaskReminder(task: Task): Observable<void> {
+    const docRef = doc(db, 'tasks', task.id!);
+    return from(updateDoc(docRef, { reminder: task.reminder }));
   }
+
   addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiURL, task, httpOptions);
+    const tasksRef = collection(db, 'tasks');
+    return from(addDoc(tasksRef, task)).pipe(
+      map((docRef) => {
+        return { ...task, id: docRef.id } as Task;
+      })
+    );
   }
 }
