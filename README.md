@@ -6,6 +6,7 @@ Welcome to the Task Reminder Angular Web App! This application is designed to he
 Live Demo
 ---------
 
+![Screenshot of Task Reminder App](https://firebasestorage.googleapis.com/v0/b/angular-simple-web-app.appspot.com/o/snapshot.png?alt=media&token=226bf17e-e61f-4e63-b606-0d347197cab9)
 You can access the live version of the app here: [Task Reminder Web App](https://angular-simple-web-app.web.app/)
 
 Features
