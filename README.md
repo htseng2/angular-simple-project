@@ -1,27 +1,52 @@
-# AngularSimpleProject
+Task Reminder Angular Web App
+=============================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Welcome to the Task Reminder Angular Web App! This application is designed to help you keep track of your tasks and reminders efficiently. It's built using Angular and offers a simple and intuitive user interface.
 
-## Development server
+Live Demo
+---------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+You can access the live version of the app here: [Task Reminder Web App](https://angular-simple-web-app.web.app/)
 
-## Code scaffolding
+Features
+--------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **Add Tasks**: Easily add new tasks by clicking the "Add" button, which opens a form to enter task details.
+*   **Delete Tasks**: Remove tasks you no longer need by clicking on the red "X" button.
+*   **Toggle Reminders**: Double-click on any task to toggle the reminder on or off.
 
-## Build
+Getting Started
+---------------
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your system to use npm (Node Package Manager), which is required to run this application.
+
+### Installation
+
+1.  Clone the repository to your local machine.
+2.  Navigate to the project directory.
+3.  Run `npm install` to install all the dependencies.
+
+### Development Server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Built With
+----------
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+*   [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5 - The web framework used
 
-## Running end-to-end tests
+Contributing
+------------
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+We welcome contributions to this project. Please read the CONTRIBUTING.md file for guidelines on how to contribute.
 
-## Further help
+License
+-------
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is licensed under the MIT License - see the LICENSE.md file for details.
